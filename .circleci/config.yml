@@ -9,4 +9,12 @@ orbs:
       - node/install-packages:
           cache-path: ~/app/node_modules
           override-ci-command: npm install
-      - run: npm test
+
+
+jobs: 
+  buid:
+    docker:
+      - image: circleci/node:12
+
+    steps:
+      -run: npm test
