@@ -18,12 +18,9 @@ jobs:
     
       - node/install:
           install-yarn: true
-          - node/install-packages:
-          cache-path: ~/project/node_modules
-          override-ci-command: npm install
           node-version: '12'
         - run: node --version
-
+        - run: yarn test
         - run: npm test
 
 # Invoke jobs via workflows
