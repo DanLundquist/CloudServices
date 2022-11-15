@@ -1,6 +1,8 @@
 version: "3.7"
 
 services:
+  javascript_env:
+    image: node:12-alpine
   docs:
     build:
       context: .
