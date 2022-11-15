@@ -3,11 +3,11 @@ orbs:
   node: circleci/node@5.0.2
 jobs:
   build_and_test:
-    working_directory: C:\Users\Danie\Documents\Skole\Skytjenesta\getting-started\app
+    working_directory: \getting-started\app
     executor: node/default
     steps:
       - checkout:
-          path: C:\Users\Danie\Documents\Skole\Skytjenesta\getting-started\app
+          path: \getting-started\app
       - node/install-packages:
           pkg-manager: npm
           app-dir: app
