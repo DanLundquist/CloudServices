@@ -6,7 +6,6 @@ jobs:
     docker:
       - image: cimg/base:stable
 
-    working_directory: /app
     steps:
       - checkout
       - node/install-packages:
