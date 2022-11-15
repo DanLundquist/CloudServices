@@ -1,20 +1,14 @@
-version: '2.1'
-orbs:
-  node: circleci/node@5.0.3
-  test:
-    executor: node/default
+version: 2.1
+jobs:
+  say-hello:
+    docker:
+      - image: cimg/base:stable
     steps:
       - checkout
-      - run: sudo npm install -g npm@latest
-      - node/install-packages:
-          cache-path: ~/app/node_modules
-          override-ci-command: npm install
-
-
-jobs: 
-  buid:
-    docker:
-      - image: circleci/node:12
-
-    steps:
-      -run: npm test
+      - run:
+          name: "Say hello"
+          command: "echo Hello, World!"
+workflows:
+  say-hello-workflow:
+    jobs:
+      - say-hello
