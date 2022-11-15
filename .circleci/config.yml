@@ -9,12 +9,12 @@ jobs:
     steps:
       - checkout
       - node/install-packages:
-          pkg-manager: npm
+          pkg-manager: yarn
           app-dir: app
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
-      - run: npm test
+      - run: yarn test
 workflows:
   say-hello-workflow:
     jobs:
