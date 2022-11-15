@@ -3,9 +3,11 @@ orbs:
   node: circleci/node@5.0.2
 jobs:
   build_and_test:
+    working_directory: ~/app
     executor: node/default
     steps:
-      - checkout
+      - checkout:
+          path: ~/app
       - node/install-packages:
           pkg-manager: npm
           app-dir: app
