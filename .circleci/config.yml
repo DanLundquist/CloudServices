@@ -16,7 +16,7 @@ jobs:
           command: npm build
           name: Build app
       - persist_to_workspace:
-          root: ~/project
+          root: app\package.json
           paths:
             - .
 
