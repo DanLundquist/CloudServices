@@ -8,6 +8,7 @@ jobs:
       - checkout
       - node/install-packages:
           pkg-manager: npm
+          app-dir: app
       - run:
           command: npm test
           name: Run tests
