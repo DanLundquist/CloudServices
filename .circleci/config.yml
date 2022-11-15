@@ -1,21 +1,11 @@
+# This config is equivalent to both the '.circleci/extended/orb-free.yml' and the base '.circleci/config.yml'
 version: 2.1
-orbs:
-  node: circleci/node@5.0.3
-jobs:
-  say-hello:
-    docker:
-      - image: cimg/base:stable
 
+jobs:
+  build:
+    docker:
+      - image: cimg/node:16.15.0
+      - image: cimg/mysql:5.7
     steps:
-      - node/install-npm
       - checkout
-      - node/install-packages:
-          app-dir: app
-      - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
-      - run: npm test
-workflows:
-  say-hello-workflow:
-    jobs:
-      - say-hello
+      - run: npm install
