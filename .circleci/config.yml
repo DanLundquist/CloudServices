@@ -7,14 +7,12 @@ jobs:
       - image: cimg/base:stable
     steps:
       - checkout
+      - node/install-npm
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
+      - run: npm test
 workflows:
   say-hello-workflow:
     jobs:
       - say-hello
-      - node/test:
-          version: '16.10'
-          pkg-manager: npm
-
