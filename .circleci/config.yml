@@ -8,11 +8,11 @@ jobs:
     steps:
       - checkout
       - node/install
-    run:
-      - store_test_results
-        path: test-results
+
 
 workflows:
   say-hello-workflow:
     jobs:
       - node/test
+      - store_test_results
+        path: test-results
