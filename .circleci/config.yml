@@ -9,7 +9,7 @@ jobs:
       - checkout
       - node/install
       - store_test_results:
-          path: test-results
+          path: test
 
 
 workflows:
